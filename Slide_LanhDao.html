@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RaViện · Lộ trình sản phẩm AI (Executive 1-Slide)</title>
+  <style>
+    :root {
+      --primary: #0284c7;
+      --primary-dark: #0369a1;
+      --bg: #0f172a;
+      --card-bg: rgba(30, 41, 59, 0.75);
+      --card-border: rgba(148, 163, 184, 0.15);
+      --text-main: #f8fafc;
+      --text-sub: #cbd5e1;
+      --accent-green: #10b981;
+      --accent-amber: #f59e0b;
+      --accent-rose: #f43f5e;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+    body {
+      background: radial-gradient(circle at top right, #1e293b, #0f172a);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .slide-canvas {
+      width: 100%;
+      max-width: 1200px;
+      aspect-ratio: 16 / 9;
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 40px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 16px;
+    }
+    .tag {
+      display: inline-block;
+      padding: 4px 12px;
+      background: rgba(2, 132, 199, 0.2);
+      color: #38bdf8;
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      border-radius: 9999px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    h1 {
+      font-size: 26px;
+      font-weight: 700;
+      color: #ffffff;
+    }
+    .subtitle {
+      font-size: 14px;
+      color: var(--text-sub);
+    }
+    .meta-badge {
+      text-align: right;
+      font-size: 13px;
+      color: #94a3b8;
+      line-height: 1.6;
+    }
+
+    /* Executive summary pill */
+    .executive-conclusion {
+      margin: 18px 0;
+      padding: 16px 22px;
+      background: linear-gradient(135deg, rgba(2, 132, 199, 0.25), rgba(16, 185, 129, 0.15));
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      border-radius: 12px;
+    }
+    .conclusion-label {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #38bdf8;
+      margin-bottom: 4px;
+      letter-spacing: 0.5px;
+    }
+    .conclusion-text {
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 1.5;
+      color: #ffffff;
+    }
+
+    /* Grid for 4 pillars */
+    .grid-pillars {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      flex: 1;
+    }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+    }
+    .card-title {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .icon {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+    .card:nth-child(1) .card-title { color: #38bdf8; }
+    .card:nth-child(1) .icon { background: #38bdf8; }
+    .card:nth-child(2) .card-title { color: var(--accent-green); }
+    .card:nth-child(2) .icon { background: var(--accent-green); }
+    .card:nth-child(3) .card-title { color: var(--accent-rose); }
+    .card:nth-child(3) .icon { background: var(--accent-rose); }
+    .card:nth-child(4) .card-title { color: var(--accent-amber); }
+    .card:nth-child(4) .icon { background: var(--accent-amber); }
+
+    .card-content {
+      font-size: 13.5px;
+      line-height: 1.55;
+      color: var(--text-sub);
+    }
+    .card-content strong {
+      color: #ffffff;
+    }
+
+    .footer {
+      border-top: 1px solid var(--card-border);
+      padding-top: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      color: #64748b;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="slide-canvas">
+    <!-- Header -->
+    <div class="header">
+      <div>
+        <span class="tag">AI Product Roadmap · Track 1 Khóa 4</span>
+        <h1>RaViện: Trợ lý soạn nháp tóm tắt ra viện cho bác sĩ khoa nội</h1>
+        <div class="subtitle">Mô hình AI hỗ trợ lâm sàng kết hợp cơ chế kiểm duyệt chuyên gia đa tầng</div>
+      </div>
+      <div class="meta-badge">
+        <div><strong>Đề số:</strong> Đề 3 (Nhóm FinTech)</div>
+        <div><strong>Tác giả:</strong> Tạ Việt Cường (2A202602560)</div>
+        <div><strong>Trạng thái:</strong> Sửa lỗi liều insulin để phát hành</div>
+      </div>
+    </div>
+
+    <!-- 1. Kết luận (1 câu) -->
+    <div class="executive-conclusion">
+      <div class="conclusion-label">★ Kết luận chiến lược (1 câu)</div>
+      <div class="conclusion-text">
+        RaViện cam kết sửa triệt để lỗi liều insulin, vượt cổng đánh giá 45 ca để triển khai thử nghiệm 3 tháng tại Khoa Nội, giảm 65% thời gian viết tóm tắt của bác sĩ và đạt biên lợi nhuận 60,7%.
+      </div>
+    </div>
+
+    <!-- 4 Khối thông tin cốt lõi -->
+    <div class="grid-pillars">
+      <!-- 2. 3 việc chính -->
+      <div class="card">
+        <div class="card-title"><span class="icon"></span>3 Việc chính</div>
+        <div class="card-content">
+          <strong>1. Sửa lỗi liều insulin</strong> và tự động đối chiếu thuốc với y lệnh cuối (0 lỗi nghiêm trọng).<br><br>
+          <strong>2. Soạn nháp diễn biến</strong>, chẩn đoán giảm thời gian từ 18 xuống 6 phút.<br><br>
+          <strong>3. Gắn cờ cảnh báo</strong> hồ sơ mâu thuẫn cho bác sĩ.
+        </div>
+      </div>
+
+      <!-- 3. Cần gì -->
+      <div class="card">
+        <div class="card-title"><span class="icon"></span>Cần gì (Nguồn lực)</div>
+        <div class="card-content">
+          <strong>Người:</strong> Cần 20,3 giờ chuyên môn của BS Phương và DS Hải thẩm định 45 ca; 1 Dược sĩ kiểm tra phần thuốc 3 phút/bản (150.000 đ/giờ).<br><br>
+          <strong>Dữ liệu & Tuân thủ:</strong> Kết nối API bệnh án điện tử nội bộ tuân thủ Luật AI 134/2025.
+        </div>
+      </div>
+
+      <!-- 4. Rủi ro lớn nhất & cách xử lý -->
+      <div class="card">
+        <div class="card-title"><span class="icon"></span>Rủi ro & Xử lý</div>
+        <div class="card-content">
+          <strong>Rủi ro lớn nhất:</strong> Bác sĩ phải sửa nhiều (>30%) hoặc sai sót thuốc lọt ra ngoài khiến dự án dừng ở tháng 3, hết tiền ở tháng 9.<br><br>
+          <strong>Cách xử lý:</strong> Dược sĩ kiểm tra kép phần thuốc, bác sĩ ký 100% bản nháp.
+        </div>
+      </div>
+
+      <!-- 5. Khi nào xem lại -->
+      <div class="card">
+        <div class="card-title"><span class="icon"></span>Khi nào xem lại</div>
+        <div class="card-content">
+          <strong>Lịch rà soát:</strong> Rà soát ngày 30 và 60 về tỷ lệ sửa nháp; ngày 90 quyết định ký hợp đồng thương mại 15 triệu/tháng và mở rộng khoa.<br><br>
+          <strong>Sự kiện kích hoạt:</strong> Rà soát ngay khi có mô hình AI rẻ hơn hoặc HIS ra tính năng mới.
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <div>Đơn vị: VinUni · AI in Action · Thẩm định tự động: 8/8 chỉ số ĐẠT</div>
+      <div>Quy tắc: Không quá 60 chữ mỗi ô · Tuân thủ Luật AI số 134/2025/QH15</div>
+    </div>
+  </div>
+
+</body>
+</html>
